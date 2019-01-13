@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col">
+        <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Buscar Artista">
+    </div>
+</div>
+<app-loading *ngIf="loading" class="m-5"></app-loading>
+<div *ngIf="error" class="alert alert-danger animated fadeIn m-5">
+    <h3>¡Error!</h3>
+    <p>{{ mensajeError }}</p>
+</div>
+<app-tarjetas [items]="artistas"></app-tarjetas>
